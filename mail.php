@@ -50,7 +50,7 @@ if((isset($_REQUEST["username"]) && isset($_REQUEST["password"]))) {
 		
 		// return a list of messages
 		
-		//parameters - page number, quantity of messages per page
+		//parameters - page number, number of messages per page
 		$params = array("p"=>1, "q"=>40);
 		foreach(array_keys($params) as $param) {
 			if(isset($_REQUEST[$param])) {
@@ -128,10 +128,8 @@ if((isset($_REQUEST["username"]) && isset($_REQUEST["password"]))) {
 			$filename = $filedetails["filename"];
 			$size = $filedetails["size"];
 			$mimetype = $filedetails["mimetype"];
-			//header('content-type: application/octet-stream');
 			header('Content-Disposition: attachment; filename="' . $filename . '"');
 			header('Content-Type: ' . $mimetype);
-			//header('Content-Length: ' . $size);
 			echo $mail->get_attachment($uid, $mime_id);
 		}
 	} elseif($action=="token") {

@@ -25,13 +25,16 @@ require_once('lib/rcube_html2text.php');
 
 class email {
 
+//configurations
 private $inbound='imap.exchange.sussex.ac.uk'; //imap server address
 private $outbound='smtp.sussex.ac.uk'; //smtp address
 private $ad_server='ldaps://ad.susx.ac.uk'; //AD server to look up user details
-private $ad_domain = 'ad_us'; //AD domain
 private $ldap_look_up='dc=ad,dc=susx,dc=ac,dc=uk'; //LDAP query string
+private $ad_domain = 'ad_us'; //AD domain
 private $default_mail_address = '@sussex.ac.uk'; //appended to user name 
 private $sentbox='Sent Items'; //folder for saving sent items
+
+//other variables used dynamically
 private $user;
 private $pass;
 private $identity;
