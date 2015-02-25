@@ -1,6 +1,6 @@
 #PHP mail client
 
-This mail client uses several libraries from the RoundCube project to implement a REST service for reading and sending emails. The file *mail.php* and the *lib* folder are designed to run on a remote server. The *email.html* file is for the local device and uses javascript to interact with the server pages. It's designed to be run as an AEK page in a campusM app.
+This mail client uses several libraries from the RoundCube project (http://roundcube.net) to implement a REST service for reading and sending emails. The file *mail.php* and the *lib* folder are designed to run on a remote server. The *email.html* file is for the local device and uses javascript to interact with the server pages. It's designed to be run as an AEK page in a campusM app.
 
 The service includes support for listing, reading emails (including attachments) and sending plain text email.
 
