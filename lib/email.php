@@ -26,7 +26,7 @@ require_once('lib/rcube_html2text.php');
 class email {
 
 //configurations
-private $inbound='imap.exchange.my.co.uk'; //imap server address
+private $inbound='imap.my.co.uk'; //imap server address
 private $outbound='smtp.my.co.uk'; //smtp address
 private $ad_server='ldaps://ad.my.co.uk'; //AD server to look up user details
 private $ldap_look_up='dc=ad,dc=my,dc=co,dc=uk'; //LDAP query string
