@@ -30,7 +30,7 @@ private $inbound='imap.my.co.uk'; //imap server address
 private $outbound='smtp.my.co.uk'; //smtp address
 private $ad_server='ldaps://ad.my.co.uk'; //AD server to look up user details
 private $ldap_look_up='dc=ad,dc=my,dc=co,dc=uk'; //LDAP query string
-private $ad_domain = 'ad_us'; //AD domain
+private $ad_domain = 'ad_myco'; //AD domain
 private $default_mail_address = '@my.co.uk'; //appended to user name 
 private $sentbox='Sent Items'; //folder for saving sent items
 
