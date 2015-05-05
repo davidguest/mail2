@@ -103,7 +103,7 @@
 
     var username = "{{ token.user_credentials.username }}";
     var password = "{{ token.user_credentials.password }}";
-    var url = "https://php.server.com/mail";
+    var url = "https://my.php.server/mail";
     var page = 1;
     var msgTotal = 0;
     var unsTotal = 0;
@@ -176,7 +176,7 @@
       
       $("#more").hide();
       $("#fetching").show();
-      var postfields = "token="+token+"&p="+pg;
+      var postfields = "username="+username+"&password="+password+"&p="+pg;
       get( postfields , printMessageList );
       
     }
@@ -265,7 +265,7 @@
     function getMessage(uid) {
     
       $("#messagepanel").text('');
-      var postfields = "token="+token+"&action=read&uid="+uid;
+      var postfields = "username="+username+"&password="+password+"&action=read&uid="+uid;
       get(postfields, printMessage);
       debug("getting "+uid);
       
@@ -446,7 +446,7 @@
         var sendSubject = $("#formSubject").val();
         var sendBody = $("#formBody").val();
         sendBody = sendBody.split("&").join("----ampersand----");
-        var postfields = "action=send&token="+token;
+        var postfields = "action=send&username="+username+"&password="+password;
         postfields += "&to="+ encodeURI(sendTo);
         postfields += "&cc=" + encodeURI(sendCc);
         postfields += "&bcc=" + encodeURI(sendBcc);
@@ -475,13 +475,14 @@
   
     function linkAttachment(uid, mime_id) {
 
-  	var fileloc = url + '?action=download&token=' + encodeURI(token) + '&uid=' + uid + '&mime_id=' + mime_id;
+  	var fileloc = url + '?action=download&username='+username+'&password='+password+'&uid=' + uid + '&mime_id=' + mime_id;
   	return fileloc;
   
     }
   
     $(document).ready(function() {
       //get the first page of email by default
+      alert(username);
       getData();
       formMessageList(page);
     });
